@@ -1,7 +1,12 @@
+import os
+from dotenv import load_dotenv
 import pandas as pd
 from clean_dataset import clean_dataset
 
-URL = "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SRAG/2025/INFLUD25-22-12-2025.csv"
+# Carrega variáveis de ambiente do .env
+load_dotenv()
+
+URL = os.getenv("OPENDATASUS_URL")
 RAW_PATH = "data/raw/srag_raw.csv"
 OUTPUT_PATH = "data/processed/srag_clean.csv"
 
