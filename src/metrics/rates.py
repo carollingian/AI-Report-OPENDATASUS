@@ -2,6 +2,11 @@ import pandas as pd
 
 # MÉTRICA 1: TAXA DE AUMENTO DE CASOS
 def increase_cases_rate(df, days):
+    """
+    Função que calcula a taxa de aumento de casos nos últimos 'days' dias
+    Retorna a taxa em porcentagem
+    """
+    
     df = df.copy()
     df["data_notificacao"] = pd.to_datetime(df["data_notificacao"], errors="coerce")
 
@@ -28,6 +33,11 @@ def increase_cases_rate(df, days):
 # MÉTRICA 3: TAXA DE OCUPAÇÃO DE UTI
 # MÉTRICA 4: TAXA DE VACINAÇÃO
 def metrics_rate(df, days, feature):
+    """
+    Função que calcula a taxa de um dado feature (evolucao, uti, vacina, vacina_covid) nos últimos 'days' dias
+    Retorna a taxa em porcentagem
+    """
+
     if feature == "evolucao":
         date = "data_evolucao"
     else:

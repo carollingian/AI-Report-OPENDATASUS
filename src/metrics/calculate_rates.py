@@ -4,7 +4,14 @@ from src.metrics.rates import (
 )
 
 # Calcula as métricas para o relatório
-def calculate_rates(df) -> dict:
+def calculate_rates(df):
+    """
+    Calcula e retorna as métricas:
+    - Taxa de aumento de casos (7, 14, 30 dias)
+    - Taxa de mortalidade (7, 14, 30 dias)
+    - Taxa de ocupação da UTI (7, 14, 30 dias)
+    - Taxa de vacinação (gripe e COVID-19) (7, 14, 30 dias)
+    """
     return {
         "taxa_aumento_casos_7_dias": round(increase_cases_rate(df, 7), 2),
         "taxa_aumento_casos_14_dias": round(increase_cases_rate(df, 14), 2),

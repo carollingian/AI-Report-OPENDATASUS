@@ -5,6 +5,10 @@ import matplotlib.dates as mdates
 
 # Número diário de casos dos últimos 30 dias
 def plot_last_30d(df, output_path):
+    """
+    Função que plota o número diário de casos dos últimos 30 dias e salva o gráfico em output_path
+    """
+
     df = df.copy()
     df["data_notificacao"] = pd.to_datetime(df["data_notificacao"], errors="coerce")
 
@@ -64,8 +68,11 @@ def plot_last_30d(df, output_path):
     plt.close()
 
 
-# Número mensal de casos dos últimos 12 meses
 def plot_last_12m(df, output_path):
+    """
+    Função que plota o número mensal de casos dos últimos 12 meses e salva o gráfico em output_path
+    """
+    
     df = df.copy()
     df["data_notificacao"] = pd.to_datetime(df["data_notificacao"], errors="coerce")
 

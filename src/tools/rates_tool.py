@@ -8,9 +8,10 @@ DATA_PATH = "data/processed/srag_clean.csv"
 def get_rates():
     """
     Tool que calcula e retorna as métricas:
-    - Taxa de mortalidade
-    - Taxa de ocupação da UTI
-    - Taxa de vacinação (gripe e COVID-19)
+    - Taxa de aumento de casos (7, 14, 30 dias)
+    - Taxa de mortalidade (7, 14, 30 dias)
+    - Taxa de ocupação da UTI (7, 14, 30 dias)
+    - Taxa de vacinação (gripe e COVID-19) (7, 14, 30 dias)
     """
     # Retorna métricas requisitadas para o relatório
     df = pd.read_csv(DATA_PATH)
