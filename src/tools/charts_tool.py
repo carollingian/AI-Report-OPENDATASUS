@@ -7,7 +7,12 @@ OUTPUT_PATH = "report/charts"
 
 @tool
 def charts_tool():
-    # Gera gráficos epidemiológicos de SRAG e retorna os caminhos dos arquivos png
+    """
+    Tool que gera os gráficos
+    - Número diário de casos de SRAG (Últimos 30 Dias)
+    - Número mensal de casos de SRAG (Últimos 12 Meses)
+    e retorna os caminhos dos arquivos png
+    """
 
     df = pd.read_csv(DATA_PATH)
 

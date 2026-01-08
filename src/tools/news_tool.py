@@ -10,7 +10,9 @@ NEWSAPI_KEY = os.getenv("NEWSAPI_KEY")
 
 
 def portugal_source(url):
-    # Retorna True se a URL for de Portugal (.pt)
+    """
+    Função que verifica e retorna True se a URL é de uma fonte de Portugal (.pt)
+    """
     
     try:
         domain = urlparse(url).netloc.lower()
@@ -19,8 +21,11 @@ def portugal_source(url):
         return False
 
 @tool
-def newsapi_tool():
-    # Busca notícias recentes sobre SRAG e vacinação com a NewsAPI
+def news_tool():
+    """
+    Tool que busca e filtra notícias recentes sobre SRAG 
+    por meio de palavras-chave com a NewsAPI
+    """
 
     url = "https://newsapi.org/v2/everything"
 
@@ -35,7 +40,7 @@ def newsapi_tool():
         "q": key_words,
         "language": "pt",
         "sortBy": "publishedAt",
-        "pageSize": 20,  # pede mais para compensar o filtro
+        "pageSize": 20,
         "apiKey": NEWSAPI_KEY
     }
 
@@ -51,6 +56,7 @@ def newsapi_tool():
         if not url_article:
             continue
 
+        # Remove artigos de fontes de Portugal para centralizar no Brasil
         if portugal_source(url_article):
             continue
 
@@ -61,6 +67,5 @@ def newsapi_tool():
             "summary": a.get("description"),
             "url": url_article
         })
-
 
     return filtered_articles
