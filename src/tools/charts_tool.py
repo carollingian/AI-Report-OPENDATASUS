@@ -6,7 +6,7 @@ DATA_PATH = "data/processed/srag_clean.csv"
 OUTPUT_PATH = "report/charts"
 
 @tool
-def charts_tool():
+def charts_tool(arg):
     """
     Tool que gera os gráficos
     - Número diário de casos de SRAG (Últimos 30 Dias)

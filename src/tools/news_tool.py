@@ -21,7 +21,7 @@ def portugal_source(url):
         return False
 
 @tool
-def news_tool():
+def news_tool(arg):
     """
     Tool que busca e filtra notícias recentes sobre SRAG 
     por meio de palavras-chave com a NewsAPI
@@ -31,9 +31,8 @@ def news_tool():
 
     key_words = (
         'síndrome respiratória aguda grave OR srag OR '
-        'vacina gripe brasil OR vacina influenza brasil OR '
-        'gripe brasil OR vacina covid brasil OR '
-        'vacina covid-19 brasil OR síndrome respiratória brasil'
+        'vacina gripe brasil OR síndrome respiratória brasil OR '
+        'gripe brasil'
     )
 
     params = {
