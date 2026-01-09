@@ -5,7 +5,7 @@ from src.metrics.calculate_rates import calculate_rates
 DATA_PATH = "data/processed/srag_clean.csv"
 
 @tool
-def get_rates():
+def rates_tool(arg):
     """
     Tool que calcula e retorna as métricas:
     - Taxa de aumento de casos (7, 14, 30 dias)
