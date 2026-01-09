@@ -25,12 +25,12 @@ def calculate_rates(df):
         "taxa_ocupacao_uti_14_dias": round(metrics_rate(df, 14, "uti"), 2),
         "taxa_ocupacao_uti_30_dias": round(metrics_rate(df, 30, "uti"), 2),
         "taxa_ocupacao_uti_90_dias": round(metrics_rate(df, 90, "uti"), 2),
-        "taxa_vacinacao_7_dias": round(metrics_rate(df, 7, "vacina"), 2),
-        "taxa_vacinacao_14_dias": round(metrics_rate(df, 14, "vacina"), 2),
-        "taxa_vacinacao_30_dias": round(metrics_rate(df, 30, "vacina"), 2),
-        "taxa_vacinacao_90_dias": round(metrics_rate(df, 90, "vacina"), 2),
-        "taxa_vacinacao_7_dias": round(metrics_rate(df, 7, "vacina_covid"), 2),
-        "taxa_vacinacao_14_dias": round(metrics_rate(df, 14, "vacina_covid"), 2),
-        "taxa_vacinacao_30_dias": round(metrics_rate(df, 30, "vacina_covid"), 2),
-        "taxa_vacinacao_90_dias": round(metrics_rate(df, 90, "vacina_covid"), 2)
+        "taxa_vacinacao_gripe_7_dias": round(metrics_rate(df, 7, "vacina"), 2),
+        "taxa_vacinacao_gripe_14_dias": round(metrics_rate(df, 14, "vacina"), 2),
+        "taxa_vacinacao_gripe_30_dias": round(metrics_rate(df, 30, "vacina"), 2),
+        "taxa_vacinacao_gripe_90_dias": round(metrics_rate(df, 90, "vacina"), 2),
+        "taxa_vacinacao_covid_7_dias": round(metrics_rate(df, 7, "vacina_covid"), 2),
+        "taxa_vacinacao_covid_14_dias": round(metrics_rate(df, 14, "vacina_covid"), 2),
+        "taxa_vacinacao_covid_30_dias": round(metrics_rate(df, 30, "vacina_covid"), 2),
+        "taxa_vacinacao_covid_90_dias": round(metrics_rate(df, 90, "vacina_covid"), 2)
     }

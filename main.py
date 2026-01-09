@@ -1,5 +1,24 @@
 import os
+import subprocess
+from datetime import date
+
 from src.agent.orchestrator import build_agent
+
+def markdown_to_pdf(md_path, pdf_path):
+    try:
+        subprocess.run(
+            [
+                "pandoc",
+                md_path,
+                "-o",
+                pdf_path,
+                "--pdf-engine=xelatex"
+            ],
+            check=True
+        )
+        print(f"PDF gerado com sucesso: {pdf_path}")
+    except subprocess.CalledProcessError as e:
+        print("Erro ao gerar PDF:", e)
 
 def main():
     reader_agent, writer_chain = build_agent()
@@ -21,15 +40,34 @@ def main():
     print("\nRedigindo o relatório final com o Writer Chain...")
 
     result = writer_chain.invoke({"dados_coletados": raw_data})
-    final_report = result.content if hasattr(result, 'content') else result
+    report_body = result.content if hasattr(result, "content") else result
+
+    # HEADER COM DATA ATUAL
+    data_geracao = date.today().strftime("%d/%m/%Y")
+
+    report_header = f"""# Relatório Epidemiológico SRAG no Brasil
+
+**Relatório gerado em:** {data_geracao}
+
+---
+
+"""
+
+    final_report = report_header + report_body
 
     print("\n__________________RELATÓRIO FINAL__________________\n")
     print(final_report)
 
     # Salvando em Markdown
-    with open("report/final_report.md", "w", encoding="utf-8") as f:
+    md_path = "report/final_report.md"
+    pdf_path = "report/final_report.pdf"
+
+    with open(md_path, "w", encoding="utf-8") as f:
         f.write(final_report)
-        print("\nRelatório concluído com sucesso e salvo em 'final_report.md'")
+        print(f"\nRelatório salvo em '{md_path}'")
+
+    print("\nGerando PDF a partir do Markdown...")
+    markdown_to_pdf(md_path=md_path, pdf_path=pdf_path)
 
 if __name__ == "__main__":
     main()

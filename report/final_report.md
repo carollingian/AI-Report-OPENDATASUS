@@ -1,48 +1,59 @@
+# Relatório Epidemiológico SRAG no Brasil
+
+**Relatório gerado em:** 09/01/2026
+
+---
+
 ## MÉTRICAS EPIDEMIOLÓGICAS
 
-As métricas epidemiológicas fornecem uma visão geral da situação atual da Síndrome Respiratória Aguda Grave (SRAG) no Brasil. Com base nos dados extraídos até 22 de dezembro de 2025, observamos as seguintes métricas:
+1. **Taxa de aumento de casos em 30 dias e 90 dias:**
+   - Taxa de aumento de casos em 30 dias: -23.9%
+   - Taxa de aumento de casos em 90 dias: -31.22%
+   - Explicação: A taxa de aumento de casos em ambos os períodos (30 e 90 dias) é negativa, indicando uma redução nos casos de SRAG. Isso sugere que as medidas de controle e prevenção implementadas estão sendo eficazes.
 
-1. **Taxa de aumento de casos em 7 dias**: -51.33%
-   - A taxa de aumento de casos nos últimos 7 dias apresentou uma redução significativa, indicando uma possível desaceleração na propagação da SRAG. Essa queda pode estar relacionada a medidas de controle e prevenção implementadas pelas autoridades de saúde.
+2. **Taxa de mortalidade em 30 dias e 90 dias:**
+   - Taxa de mortalidade em 30 dias: 7.09%
+   - Taxa de mortalidade em 90 dias: 6.46%
+   - Explicação: A taxa de mortalidade em 30 dias é ligeiramente superior à de 90 dias, o que pode indicar uma gravidade maior nos casos recentes ou uma melhoria nos cuidados de saúde ao longo do tempo.
 
-2. **Taxa de mortalidade em 30 dias**: 7.09%
-   - A taxa de mortalidade nos últimos 30 dias foi de 7.09%, sugerindo que, apesar da redução nos casos, a SRAG ainda apresenta uma letalidade considerável. Isso pode estar associado à gravidade dos casos atendidos nos hospitais.
+3. **Taxa de ocupação de UTI em 30 dias e 90 dias:**
+   - Taxa de ocupação de UTI em 30 dias: 25.25%
+   - Taxa de ocupação de UTI em 90 dias: 25.93%
+   - Explicação: A taxa de ocupação de UTI permanece relativamente estável nos últimos 30 e 90 dias, sugerindo que a demanda por cuidados intensivos não teve grandes variações.
 
-3. **Taxa de ocupação de UTI em 30 dias**: 25.25%
-   - A taxa de ocupação de UTI nos últimos 30 dias foi de 25.25%, indicando uma ocupação moderada das unidades de terapia intensiva. Isso sugere que, embora haja uma carga nos sistemas de saúde, ainda há capacidade para atender novos casos graves.
+4. **Taxa de vacinação de gripe em 30 dias:**
+   - Taxa de vacinação de gripe em 30 dias: 36.22%
+   - Explicação: A taxa de vacinação contra a gripe nos últimos 30 dias indica que aproximadamente um terço da população-alvo foi vacinada, o que é um indicador positivo da adesão à campanha de vacinação.
 
-4. **Taxa de vacinação em 30 dias**: 46.57%
-   - A taxa de vacinação nos últimos 30 dias foi de 46.57%, mostrando um esforço significativo na imunização da população. A vacinação é uma medida crucial para prevenir a propagação de doenças respiratórias e reduzir a gravidade dos casos.
+5. **Taxa de vacinação de COVID em 30 dias:**
+   - Taxa de vacinação de COVID em 30 dias: 46.57%
+   - Explicação: A taxa de vacinação contra a COVID-19 nos últimos 30 dias foi superior à da gripe, sugerindo uma maior adesão ou disponibilidade da vacina contra a COVID-19.
 
 ## ANÁLISE DOS GRÁFICOS
 
-Os gráficos gerados fornecem uma visualização da tendência dos casos de SRAG nos últimos 30 dias e 12 meses.
-
 ![Casos de SRAG nos últimos 30 dias](report/charts/cases_last_30d.png)
-- O gráfico de casos diários nos últimos 30 dias mostra uma tendência de queda nos casos de SRAG. Essa redução pode estar relacionada às medidas de controle e à vacinação.
-
 ![Casos de SRAG nos últimos 12 meses](report/charts/cases_last_12m.png)
-- O gráfico de casos mensais nos últimos 12 meses indica uma sazonalidade na ocorrência de SRAG, com picos durante os meses mais frios. A tendência atual sugere uma redução nos casos após um pico recente.
+
+- Descrição: Os gráficos mostram uma tendência de queda nos casos de SRAG nos últimos 30 dias e uma estabilização nos últimos 12 meses após um pico inicial. 
+- Relação com as métricas: A queda nos casos de SRAG nos últimos 30 dias está alinhada com a taxa de aumento de casos negativa (-23.9%) e pode ser influenciada pelas taxas de vacinação contra a gripe (36.22%) e COVID-19 (46.57%).
 
 ## CONTEXTO DE NOTÍCIAS
 
-As notícias recentes fornecem contexto adicional sobre a situação epidemiológica.
+1. **"Gripe K chega ao Brasil: o que você precisa saber sobre a nova variante"** - Terra.com.br, 21/12/2025
+   - Explicação: A notícia sobre a chegada da "Gripe K" ao Brasil e a identificação de casos desta nova variante pode ter influenciado a percepção pública e as ações de saúde pública.
 
-1. **"Gripe K chega ao Brasil: o que você precisa saber sobre a nova variante"** (Terra.com.br, 21/12/2025)
-   - Essa notícia destaca a chegada de uma nova variante de vírus respiratório ao Brasil, o que pode ter implicações na propagação da SRAG. A nova variante pode ter contribuído para a preocupação das autoridades de saúde.
+2. **"Gripe K: Ministério faz alerta e monitora nova variante da H3N2"** - Ig.com.br, 19/12/2025
+   - Explicação: O alerta do Ministério da Saúde sobre a "Gripe K" e o início do monitoramento indicam uma resposta proativa às novas variantes, o que pode ter contribuído para a manutenção das taxas de vacinação.
 
-2. **"Gripe K: Ministério faz alerta e monitora nova variante da H3N2"** (Ig.com.br, 19/12/2025)
-   - O Ministério da Saúde emitiu um alerta sobre a nova variante da H3N2, conhecida como "Gripe K". Isso indica que as autoridades estão monitorando a situação e tomando medidas preventivas.
-
-3. **"Saúde alerta para vacinação após Brasil registrar quatro casos de ‘gripe K’"** (InfoMoney, 19/12/2025)
-   - A notícia sobre os quatro casos registrados de "Gripe K" no Brasil reforça a importância da vacinação. A campanha de vacinação pode ter contribuído para a redução nos casos de SRAG.
+3. **"Saúde alerta para vacinação após Brasil registrar quatro casos de ‘gripe K’"** - InfoMoney, 19/12/2025
+   - Explicação: O registro de casos de "Gripe K" no Brasil e o subsequente alerta para a vacinação reforçam a importância da imunização e podem ter influenciado as taxas de vacinação observadas.
 
 ## INTERPRETAÇÃO INTEGRADA DO CENÁRIO
 
-A situação epidemiológica atual da SRAG no Brasil apresenta uma tendência de queda nos casos nos últimos 7 e 14 dias, o que pode estar relacionado às medidas de controle e à vacinação. No entanto, a letalidade da doença ainda é significativa, com uma taxa de mortalidade de 7.09% nos últimos 30 dias.
+A situação epidemiológica atual indica uma redução nos casos de SRAG e uma estabilidade na taxa de ocupação de UTI. As taxas de vacinação contra a gripe e a COVID-19 nos últimos 30 dias sugerem uma boa adesão da população às campanhas de vacinação. A chegada da "Gripe K" e as notícias relacionadas podem ter contribuído para um aumento na conscientização sobre a importância da vacinação.
 
-A chegada da "Gripe K" e a identificação de casos no Brasil podem ter antecipado a temporada de gripe e influenciado a propagação da SRAG. As autoridades de saúde estão monitorando a situação e reforçando a importância da vacinação.
+É provável que as medidas de saúde pública, incluindo a vacinação, estejam contribuindo para a redução nos casos de SRAG. No entanto, a manutenção de altas taxas de vacinação e a vigilância contínua são necessárias para evitar um ressurgimento de casos.
 
-É provável que a combinação de medidas de controle, como a vacinação e o monitoramento de novas variantes, continue a influenciar a tendência dos casos de SRAG. No entanto, a possibilidade de novos surtos ou variantes não pode ser descartada, e as autoridades de saúde devem permanecer vigilantes.
+A taxa de mortalidade permanece significativa, indicando a necessidade de cuidados de saúde de qualidade para os casos graves. A estabilidade na ocupação de UTI sugere que os serviços de saúde estão conseguindo atender à demanda atual.
 
-Em resumo, a situação atual indica uma redução nos casos de SRAG, mas com uma letalidade significativa. A vacinação e o monitoramento de novas variantes são cruciais para controlar a propagação da doença.
+Em resumo, o cenário epidemiológico é positivo em termos de redução de casos, mas requer contínua vigilância e manutenção das medidas preventivas.

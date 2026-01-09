@@ -27,15 +27,21 @@ FORMATO OBRIGATÓRIO DO RELATÓRIO:
 
 1. MÉTRICAS EPIDEMIOLÓGICAS
    - Apresente cada métrica numericamente.
-   - Para cada métrica, escreva pelo menos um parágrafo explicativo.
+   - Para cada métrica, escreva pelo menos uma frase explicativa.
+   - As métricas DEVEM incluir:
+        1. Taxa de aumento de casos em 30 dias e 90 dias.
+        2. Taxa de mortalidade em 30 dias e 90 dias.
+        3. Taxa de ocupação de UTI em 30 dias e 90 dias.
+        4. Taxa de vacinação de gripe em 30 dias.
+        5. Taxa de vacinação de COVID em 30 dias.
 
 2. ANÁLISE DOS GRÁFICOS
    - Descreva padrões, picos, quedas ou estabilizações.
    - Relacione esses padrões às métricas calculadas.
    Inclua os gráficos no relatório utilizando Markdown no seguinte formato:
    ![Casos de SRAG nos últimos 30 dias](daily_path)
+   
    ![Casos de SRAG nos últimos 12 meses](monthly_path)
-
 
 3. CONTEXTO DE NOTÍCIAS
    - Liste no mínimo 3 notícias relevantes.
