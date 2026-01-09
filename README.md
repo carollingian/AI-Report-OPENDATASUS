@@ -6,6 +6,8 @@ Este projeto depende de chaves de API externas e de alguns requisitos de sistema
 
 ---
 
+# Getting Started
+
 ## Variáveis de Ambiente
 
 Antes de executar o projeto, certifique-se de obter e configurar as seguintes **variáveis de ambiente pessoais**:
@@ -52,19 +54,19 @@ sudo apt install pandoc texlive-xetex
 
 Este projeto utiliza **Virtual Environment** para isolar as dependências.
 
-### 1️⃣ Instalar suporte a venv
+### 1. Instalar suporte a venv
 
 ```bash
 sudo apt install python3.12-venv
 ```
 
-### 2️⃣ Criar o ambiente virtual
+### 2. Criar o ambiente virtual
 
 ```bash
 python3 -m venv venv
 ```
 
-### 3️⃣ Ativar o ambiente virtual
+### 3. Ativar o ambiente virtual
 
 ```bash
 source venv/bin/activate
@@ -81,5 +83,16 @@ Com o ambiente virtual ativado, instale os pacotes necessários executando:
 ```bash
 pip install -r requirements.txt
 ```
+
+---
+
+## Execução do projeto
+
+Após seguir os passos anteriores, já é possível executar o agente com o seguinte comando:
+
+```bash
+python3 main.py
+```
+A execução resultará na geração do relatório automatizado, localizado em **report/final_report.pdf**.
 
 ---
