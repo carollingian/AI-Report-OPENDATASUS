@@ -32,6 +32,10 @@ FORMATO OBRIGATÓRIO DO RELATÓRIO:
 2. ANÁLISE DOS GRÁFICOS
    - Descreva padrões, picos, quedas ou estabilizações.
    - Relacione esses padrões às métricas calculadas.
+   Inclua os gráficos no relatório utilizando Markdown no seguinte formato:
+   ![Casos de SRAG nos últimos 30 dias](daily_path)
+   ![Casos de SRAG nos últimos 12 meses](monthly_path)
+
 
 3. CONTEXTO DE NOTÍCIAS
    - Liste no mínimo 3 notícias relevantes.

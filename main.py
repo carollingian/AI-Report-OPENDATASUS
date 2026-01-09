@@ -27,9 +27,9 @@ def main():
     print(final_report)
 
     # Salvando em Markdown
-    with open("relatorio_srag.md", "w", encoding="utf-8") as f:
+    with open("report/final_report.md", "w", encoding="utf-8") as f:
         f.write(final_report)
-        print("\nRelatório concluído com sucesso e salvo em 'relatorio_srag.md'")
+        print("\nRelatório concluído com sucesso e salvo em 'final_report.md'")
 
 if __name__ == "__main__":
     main()
