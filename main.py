@@ -2,6 +2,7 @@ import os
 import subprocess
 from datetime import date
 
+from src.data_pipeline.build_dataset import build_clean_dataset
 from src.agent.orchestrator import build_agent
 
 def markdown_to_pdf(md_path, pdf_path):
@@ -21,6 +22,10 @@ def markdown_to_pdf(md_path, pdf_path):
         print("Erro ao gerar PDF:", e)
 
 def main():
+    # 1: Construir dataset limpo
+    print("Construindo dataset limpo...")
+    build_clean_dataset()
+
     reader_agent, writer_chain = build_agent()
 
     print("Iniciando coleta de dados com o Reader Agent...")
