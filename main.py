@@ -22,7 +22,7 @@ def markdown_to_pdf(md_path, pdf_path):
         print("Erro ao gerar PDF:", e)
 
 def main():
-    # 1: Construir dataset limpo
+    # Constroi dataset limpo
     print("Construindo dataset limpo...")
     build_clean_dataset()
 
@@ -48,11 +48,11 @@ def main():
     report_body = result.content if hasattr(result, "content") else result
 
     # HEADER COM DATA ATUAL
-    data_geracao = date.today().strftime("%d/%m/%Y")
+    date_generation = date.today().strftime("%d/%m/%Y")
 
     report_header = f"""# Relatório Epidemiológico SRAG no Brasil
 
-**Relatório gerado em:** {data_geracao}
+**Relatório gerado em:** {date_generation}
 
 ---
 
@@ -63,7 +63,7 @@ def main():
     print("\n__________________RELATÓRIO FINAL__________________\n")
     print(final_report)
 
-    # Salvando em Markdown
+    # Salva em Markdown
     md_path = "report/final_report.md"
     pdf_path = "report/final_report.pdf"
 
