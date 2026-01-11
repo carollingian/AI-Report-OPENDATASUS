@@ -2,7 +2,9 @@
 
 ## Visão Geral
 
-Este projeto depende de chaves de API externas e de alguns requisitos de sistema para funcionar corretamente. Siga atentamente os passos abaixo para configurar o ambiente antes de executar a aplicação.
+Este projeto automatiza a coleta, tratamento e análise de dados públicos do
+OPENDATASUS, utilizando um pipeline de dados, notícias atuais e agente IA para gerar um 
+relatório em PDF (e Markdown) sobre a Síndrome Respiratória Aguda Grave no Brasil.
 
 ---
 
@@ -96,3 +98,102 @@ python3 main.py
 A execução resultará na geração do relatório automatizado, localizado em **report/final_report.pdf**.
 
 ---
+
+## Arquitetura
+
+O projeto é dividido em três atividades principais:
+
+- **Pipeline de Dados**: faz download, limpeza e processamento dos dados brutos.
+- **Agentes de IA**: por meio de tools, gera métricas e gráficos baseados nos dados 
+processados e interpreta-os junto a notícias externas e atuais.
+- **Geração de Relatório**: consolida os resultados em Markdown e converte para PDF.
+
+![Diagrama da Arquitetura](architecture_diagram.pdf)
+
+# Agente de IA
+
+O sistema utiliza dois componentes de IA com papéis distintos:
+
+### Reader Agent
+- Calcular métricas estatísticas a partir do dataset processado
+- Gerar dados para visualização
+- Buscar notícias recentes relacionadas ao tema
+
+> Importante: o agente **não acessa dados brutos, não manipula dataset** e não realiza tarefas de ETL.
+
+### Writer Chain
+- Consolidar os dados fornecidos pelo Reader Agent
+- Gerar um relatório final estruturado em Markdown
+- Não realizar inferências externas ou coleta adicional
+
+## Tools
+O agente não possui acesso direto aos dados brutos nem executa
+operações computacionais complexas. As ações de processamento,
+cálculo ou acesso externo é realizada por meio das tools. São três:
+
+### Rates Tool (Calcular Métricas Epidemiológicas)
+
+Responsável por calcular métricas quantitativas a partir do dataset
+processado, sendo:
+
+- Taxa de aumento de casos
+- Taxa de mortalidade
+- Taxa de ocupação de UTI
+- Taxa de vacinação
+
+**Entradas**:
+- Dataset OPENDATASUS processado
+
+**Saídas**:
+- Estrutura de dados contendo métricas numéricas prontas para análise
+
+Essa tool garante que todas as métricas apresentadas no relatório sejam
+determinísticas e baseadas exclusivamente em dados reais.
+
+### Charts Tool (Gerar Gráficos Epidemiológicos)
+
+Responsável pela geração de visualizações a partir de métricas calculadas dos dados OPENDATASUS,
+sendo:
+
+- Número diário de casos nos últimos 30 dias
+- Número mensal de casos nos últimos 90 dias
+
+Os gráficos são exportados em formato PNG e armazenados em um diretório
+específico para posterior inclusão no relatório Markdown e PDF.
+
+**Saídas**:
+- Arquivos PNG contendo as visualizações
+- Caminhos dos arquivos gerados
+
+### News Tool (Buscar Notícias Epidemiológicas)
+
+Responsável por consultar fontes jornalísticas externas para coletar
+notícias recentes relacionadas à Síndrome Respiratória Aguda Grave (SRAG).
+
+As notícias são utilizadas exclusivamente para contextualização e
+interpretação dos dados epidemiológicos, não sendo usadas como fonte
+quantitativa.
+
+A coleta é feita por meio da News API.
+
+**Critérios**:
+- Notícias mais recentes
+- Filtragem por palavra chave
+- Remoção de fontes portuguesas para focar nas brasileiras
+
+## Fluxo de Execução das Tools
+
+1. Calcular Métricas Epidemiológicas
+2. Gerar Gráficos Epidemiológicos
+3. Buscar Notícias Epidemiológicas
+4. Consolidação e interpretação pelo Writer Chain
+
+## Regras de Uso das Tools
+
+- O agente **não pode inventar métricas ou valores**
+- Toda análise quantitativa deve obrigatoriamente derivar da tool
+  *Calcular Métricas Epidemiológicas*
+- Toda visualização deve ser gerada exclusivamente pela tool
+  *Gerar Gráficos Epidemiológicos*
+- Notícias são usadas apenas como suporte interpretativo
+- O fluxo de execução das tools é fixo
