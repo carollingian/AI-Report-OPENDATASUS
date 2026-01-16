@@ -238,3 +238,31 @@ A coleta é feita por meio da News API.
   *Gerar Gráficos Epidemiológicos*
 - Notícias são usadas apenas como suporte interpretativo
 - O fluxo de execução das tools é fixo
+
+---
+
+# Organização do repositório
+
+O projeto segue padrões de formatação e controle de versões que devem ser seguidos ao fazer contribuições.
+
+### Correção e formatação de código
+
+A ferramenta **Ruff** é responsável por correções no código, enquanto **Black** realiza a formatação. Nenhuma delas compromete a lógica de programação e **devem** ser executadas antes de realizar commit.
+
+Para realizar ambas ações, execute:
+
+```bash
+make lint
+```
+
+Para realizar apenas a formatação do código, execute:
+
+```bash
+make format
+```
+
+### Nomeação de Branches e Commits
+
+Branches e commits seguem os seguintes padrões e devem ser seguidos:
+- [Conventional Branch](https://conventional-branch.github.io/)
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
