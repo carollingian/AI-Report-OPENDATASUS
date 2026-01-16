@@ -48,6 +48,13 @@ def drop_columns(df):
    return df.drop(columns=cols_drop, errors="ignore")
 
 def clean_dataset(df):
+   before = len(df)
+   df = df.drop_duplicates()
+   after = len(df)
+   print(f"Duplicatas exatas removidas: {before - after}")
+
+   print(f"O Dataset possui {after} notificações de SRAG.")
+    
    df = drop_columns(df)
 
    transform_evolution(df)
