@@ -76,6 +76,16 @@ source venv/bin/activate
 
 Após a ativação, seu terminal indicará que o ambiente virtual está ativo.
 
+## Makefile
+
+Este projeto possui um Makefile para facilitar em algumas atividades.
+
+```bash
+sudo apt install -y make
+```
+
+> **Dica:** Execute `make help` para consultar todas as chamadas disponíveis
+
 ---
 
 ## Instalação das Dependências
@@ -83,7 +93,7 @@ Após a ativação, seu terminal indicará que o ambiente virtual está ativo.
 Com o ambiente virtual ativado, instale os pacotes necessários executando:
 
 ```bash
-pip install -r requirements.txt
+make setup
 ```
 
 ---
@@ -93,7 +103,7 @@ pip install -r requirements.txt
 Após seguir os passos anteriores, já é possível executar o agente com o seguinte comando:
 
 ```bash
-python3 main.py
+make run
 ```
 A execução resultará na geração do relatório automatizado, localizado em **report/final_report.pdf**.
 
@@ -181,14 +191,14 @@ A coleta é feita por meio da News API.
 - Filtragem por palavra chave
 - Remoção de fontes portuguesas para focar nas brasileiras
 
-## Fluxo de Execução das Tools
+### Fluxo de Execução das Tools
 
 1. Calcular Métricas Epidemiológicas
 2. Gerar Gráficos Epidemiológicos
 3. Buscar Notícias Epidemiológicas
 4. Consolidação e interpretação pelo Writer Chain
 
-## Regras de Uso das Tools
+### Regras de Uso das Tools
 
 - O agente **não pode inventar métricas ou valores**
 - Toda análise quantitativa deve obrigatoriamente derivar da tool
