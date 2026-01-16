@@ -14,26 +14,27 @@ def portugal_source(url):
     """
     Função que verifica e retorna True se a URL é de uma fonte de Portugal (.pt)
     """
-    
+
     try:
         domain = urlparse(url).netloc.lower()
         return domain.endswith(".pt")
     except Exception:
         return False
 
+
 @tool
 def news_tool(arg):
     """
-    Tool que busca e filtra notícias recentes sobre SRAG 
+    Tool que busca e filtra notícias recentes sobre SRAG
     por meio de palavras-chave com a NewsAPI
     """
 
     url = "https://newsapi.org/v2/everything"
 
     key_words = (
-        'síndrome respiratória aguda grave OR srag OR '
-        'vacina gripe brasil OR síndrome respiratória brasil OR '
-        'gripe brasil'
+        "síndrome respiratória aguda grave OR srag OR "
+        "vacina gripe brasil OR síndrome respiratória brasil OR "
+        "gripe brasil"
     )
 
     params = {
@@ -41,7 +42,7 @@ def news_tool(arg):
         "language": "pt",
         "sortBy": "publishedAt",
         "pageSize": 20,
-        "apiKey": NEWSAPI_KEY
+        "apiKey": NEWSAPI_KEY,
     }
 
     response = requests.get(url, params=params, timeout=10)
@@ -60,12 +61,14 @@ def news_tool(arg):
         if portugal_source(url_article):
             continue
 
-        filtered_articles.append({
-            "title": a.get("title"),
-            "source": a.get("source", {}).get("name"),
-            "date": a.get("publishedAt", "")[:10],
-            "summary": a.get("description"),
-            "url": url_article
-        })
+        filtered_articles.append(
+            {
+                "title": a.get("title"),
+                "source": a.get("source", {}).get("name"),
+                "date": a.get("publishedAt", "")[:10],
+                "summary": a.get("description"),
+                "url": url_article,
+            }
+        )
 
     return filtered_articles

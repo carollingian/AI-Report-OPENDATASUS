@@ -17,16 +17,12 @@ def plot_last_30d(df, output_path):
     start_day = ref_day - pd.Timedelta(days=30)
 
     df_30d = df[
-        (df["data_notificacao"].notna()) &
-        (df["data_notificacao"] >= start_day) &
-        (df["data_notificacao"] <= ref_day)
+        (df["data_notificacao"].notna())
+        & (df["data_notificacao"] >= start_day)
+        & (df["data_notificacao"] <= ref_day)
     ]
 
-    daily_cases = (
-        df_30d
-        .groupby(df_30d["data_notificacao"].dt.date)
-        .size()
-    )
+    daily_cases = df_30d.groupby(df_30d["data_notificacao"].dt.date).size()
 
     full_idx = pd.date_range(start=start_day, end=ref_day, freq="D")
     daily_cases.index = pd.to_datetime(daily_cases.index)
@@ -40,7 +36,10 @@ def plot_last_30d(df, output_path):
 
     ax.set_title(
         "Número diário de casos (Últimos 30 Dias)",
-        fontsize=16, fontweight="bold", loc="left", pad=20
+        fontsize=16,
+        fontweight="bold",
+        loc="left",
+        pad=20,
     )
     ax.set_ylabel("Casos Diários")
 
@@ -61,7 +60,7 @@ def plot_last_30d(df, output_path):
             va="bottom",
             bbox=dict(boxstyle="round,pad=0.3", fc="#e74c3c", ec="none", alpha=0.8),
             color="white",
-            fontweight="bold"
+            fontweight="bold",
         )
 
     plt.tight_layout()
@@ -73,7 +72,7 @@ def plot_last_12m(df, output_path):
     """
     Função que plota o número mensal de casos dos últimos 12 meses e salva o gráfico em output_path
     """
-    
+
     df = df.copy()
     df["data_notificacao"] = pd.to_datetime(df["data_notificacao"], errors="coerce")
 
@@ -81,16 +80,12 @@ def plot_last_12m(df, output_path):
     start_day = ref_day - pd.DateOffset(months=12)
 
     df_12m = df[
-        (df["data_notificacao"].notna()) &
-        (df["data_notificacao"] >= start_day) &
-        (df["data_notificacao"] <= ref_day)
+        (df["data_notificacao"].notna())
+        & (df["data_notificacao"] >= start_day)
+        & (df["data_notificacao"] <= ref_day)
     ]
 
-    monthly_cases = (
-        df_12m
-        .groupby(df_12m["data_notificacao"].dt.to_period("M"))
-        .size()
-    )
+    monthly_cases = df_12m.groupby(df_12m["data_notificacao"].dt.to_period("M")).size()
 
     monthly_cases.index = monthly_cases.index.to_timestamp()
 
@@ -102,7 +97,10 @@ def plot_last_12m(df, output_path):
 
     ax.set_title(
         "Número mensal de casos (Últimos 12 Meses)",
-        fontsize=16, fontweight="bold", loc="left", pad=20
+        fontsize=16,
+        fontweight="bold",
+        loc="left",
+        pad=20,
     )
     ax.set_ylabel("Quantidade de Casos")
 
@@ -118,8 +116,10 @@ def plot_last_12m(df, output_path):
             xy=(bar.get_x() + bar.get_width() / 2, height),
             xytext=(0, 5),
             textcoords="offset points",
-            ha="center", va="bottom",
-            fontsize=10, fontweight="bold"
+            ha="center",
+            va="bottom",
+            fontsize=10,
+            fontweight="bold",
         )
 
     plt.tight_layout()

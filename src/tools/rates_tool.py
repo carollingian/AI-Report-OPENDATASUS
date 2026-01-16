@@ -5,6 +5,7 @@ from src.metrics.calculate_rates import calculate_rates
 
 DATA_PATH = "data/processed/srag_clean.csv"
 
+
 @tool
 def rates_tool(arg):
     """

@@ -6,6 +6,7 @@ from src.metrics.charts import plot_last_12m, plot_last_30d
 DATA_PATH = "data/processed/srag_clean.csv"
 OUTPUT_PATH = "report/charts"
 
+
 @tool
 def charts_tool(arg):
     """
@@ -23,7 +24,4 @@ def charts_tool(arg):
     plot_last_30d(df, daily_path)
     plot_last_12m(df, monthly_path)
 
-    return {
-        "daily_cases_chart": daily_path,
-        "monthly_cases_chart": monthly_path
-    }
+    return {"daily_cases_chart": daily_path, "monthly_cases_chart": monthly_path}

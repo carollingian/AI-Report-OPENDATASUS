@@ -30,5 +30,5 @@ def calculate_rates(df):
         "taxa_vacinacao_covid_7_dias": round(metrics_rate(df, 7, "vacina_covid"), 2),
         "taxa_vacinacao_covid_14_dias": round(metrics_rate(df, 14, "vacina_covid"), 2),
         "taxa_vacinacao_covid_30_dias": round(metrics_rate(df, 30, "vacina_covid"), 2),
-        "taxa_vacinacao_covid_90_dias": round(metrics_rate(df, 90, "vacina_covid"), 2)
+        "taxa_vacinacao_covid_90_dias": round(metrics_rate(df, 90, "vacina_covid"), 2),
     }
