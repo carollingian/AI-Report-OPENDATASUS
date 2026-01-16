@@ -76,6 +76,8 @@ source venv/bin/activate
 
 Após a ativação, seu terminal indicará que o ambiente virtual está ativo.
 
+---
+
 ## Makefile
 
 Este projeto possui um Makefile para facilitar em algumas atividades.
@@ -86,8 +88,6 @@ sudo apt install -y make
 
 > **Dica:** Execute `make help` para consultar todas as chamadas disponíveis
 
----
-
 ## Instalação das Dependências
 
 Com o ambiente virtual ativado, instale os pacotes necessários executando:
@@ -95,8 +95,6 @@ Com o ambiente virtual ativado, instale os pacotes necessários executando:
 ```bash
 make setup
 ```
-
----
 
 ## Execução do projeto
 
@@ -109,16 +107,49 @@ A execução resultará na geração do relatório automatizado, localizado em *
 
 ---
 
-## Arquitetura
+# Arquitetura
 
 O projeto é dividido em três atividades principais:
 
 - **Pipeline de Dados**: faz download, limpeza e processamento dos dados brutos.
-- **Agentes de IA**: por meio de tools, gera métricas e gráficos baseados nos dados 
+- **Agente de IA**: por meio de tools, gera métricas e gráficos baseados nos dados 
 processados e interpreta-os junto a notícias externas e atuais.
 - **Geração de Relatório**: consolida os resultados em Markdown e converte para PDF.
 
 ![Diagrama da Arquitetura](architecture_diagram.pdf)
+
+---
+
+# Pipeline de Dados
+
+O pipeline de dados é feito antes da criação do agente, o que possibilita que a manipulação dos dados seja determinística e protegida de ações imprevisíveis executadas pela IA.
+
+## Dataset cru
+
+Em `src/data_pipeline/build_dataset.py`, a fim de obter o Dataset cru, o pipeline verifica, na seguinte ordem:
+1. Se já existe Dataset processado, ele finaliza o pipeline
+2. Se existe Dataset cru armazenado localmente, ele utiliza esse arquivo
+3. Senão, ele baixa o Dataset cru do armazenamento na nuvem
+
+No caso 3, é importante preencher a variável **OPENDATASUS_URL** no `.env`.
+
+> **Importante:** certifique-se de preencher a DATA_ATUALIZACAO_BANCO_OPENDATASUS no `.env` com a data em que o banco de dados utilizado foi atualizado pela última vez.
+
+## Tratamentos de dados executados
+
+No arquivo `src/data_pipeline/clean_dataset.py`, o programa executa as seguintes limpezas de dados:
+- Remoção de duplicatas
+- Remoção de colunas não importantes
+- Normalização dos tipos das colunas restantes em número ou datetime
+- Renomeação das colunas restantes
+
+## Dataset processado
+
+Ao final do pipeline, o dataset processado é armazenado em `data/processed/srag_clean.csv`.
+
+> **Observação:** O dataset é acessado por tools determinísticas, e não pelo agente IA.
+
+---
 
 # Agente de IA
 
