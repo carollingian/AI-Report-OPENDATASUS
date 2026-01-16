@@ -1,7 +1,8 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
 
 # Número diário de casos dos últimos 30 dias
 def plot_last_30d(df, output_path):

@@ -1,6 +1,7 @@
 import pandas as pd
 from langchain.tools import tool
-from src.metrics.charts import plot_last_30d, plot_last_12m
+
+from src.metrics.charts import plot_last_12m, plot_last_30d
 
 DATA_PATH = "data/processed/srag_clean.csv"
 OUTPUT_PATH = "report/charts"

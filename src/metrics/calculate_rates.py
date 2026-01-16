@@ -1,7 +1,5 @@
-from src.metrics.rates import (
-    increase_cases_rate,
-    metrics_rate
-)
+from src.metrics.rates import increase_cases_rate, metrics_rate
+
 
 # Calcula as métricas para o relatório
 def calculate_rates(df):

@@ -1,8 +1,9 @@
 import os
+from urllib.parse import urlparse
+
+import requests
 from dotenv import load_dotenv
 from langchain.tools import tool
-import requests
-from urllib.parse import urlparse
 
 load_dotenv()
 

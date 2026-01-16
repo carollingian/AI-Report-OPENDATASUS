@@ -1,5 +1,5 @@
-import numpy as np
 import pandas as pd
+
 
 def transform_binary(df, column):
     df[column] = (
@@ -32,18 +32,28 @@ def drop_columns(df):
         .str.upper()
     )
    
-   cols_drop = ["NU_NOTIFIC", "DT_SIN_PRI", "SEM_NOT", "SEM_PRI", "ID_REGIONA", "CO_REGIONA", "ID_MUNICIP", 
-                "CO_MUN_NOT", "NU_IDADE_N", "TP_IDADE","COD_IDADE","ID_PAIS","CO_PAIS","SG_UF","ID_RG_RESI", 
-                "CO_RG_RESI", "ID_MN_RESI", "CO_MUN_RES", "CS_SEXO","CS_RACA", "CS_GESTANT", "CS_ESCOL_N", 
-                "CS_ZONA", "NOSOCOMIAL", "AVE_SUINO", "FEBRE", "TOSSE","GARGANTA","DISPNEIA","DESC_RESP",
-                "HISTO_VGM", "SATURACAO", "DIARREIA","VOMITO","OUTRO_SIN","ANTIVIRAL","TRAT_COV","HOSPITAL", 
-                "SG_UF_INTE", "ID_RG_INTE","CO_RG_INTE", "DT_INTERNA", "DT_NASC","CO_MU_INTE", "SURTO_SG",
-                "ID_MN_INTE", "NM_UN_INTE", "RAIOX_RES","SUPORT_VEN","AMOSTRA", "TP_AMOSTRA", "DT_COLETA",
-                "PCR_RESUL","DT_PCR","PCR_VSR","PCR_PARA1","PCR_PARA2","PCR_PARA3","PCR_PARA4","PCR_ADENO",
-                "PCR_METAP","PCR_BOCA","PCR_RINO","PCR_OUTRO","CLASSI_FIN","CRITERIO","DT_ENCERRA","DT_DIGITA",
-                "PCR_SARS2","DOR_ABD","FADIGA","PERD_OLFT","PERD_PALA","TOMO_RES","RES_AN","AN_SARS2","AN_VSR",
-                "AN_PARA1","AN_PARA2","AN_PARA3","AN_ADENO","AN_OUTRO","POV_CT","TEM_CPF","ESTRANG","FNT_IN_COV",
-                "CO_DETEC","REINF"]
+   cols_drop = ["NU_NOTIFIC", "DT_SIN_PRI", "SEM_NOT", "SEM_PRI", 
+                "ID_REGIONA", "CO_REGIONA", "ID_MUNICIP", "CO_MUN_NOT", 
+                "NU_IDADE_N", "TP_IDADE","COD_IDADE","ID_PAIS", 
+                "CO_PAIS", "SG_UF" ,"ID_RG_RESI", "CO_RG_RESI", 
+                "ID_MN_RESI", "CO_MUN_RES", "CS_SEXO", "CS_RACA", 
+                "CS_GESTANT", "CS_ESCOL_N", "CS_ZONA", "NOSOCOMIAL", 
+                "AVE_SUINO", "FEBRE", "TOSSE", "GARGANTA", 
+                "DISPNEIA", "DESC_RESP", "HISTO_VGM", "SATURACAO", 
+                "DIARREIA", "VOMITO", "OUTRO_SIN", "ANTIVIRAL", 
+                "TRAT_COV", "HOSPITAL", "SG_UF_INTE", "ID_RG_INTE", 
+                "CO_RG_INTE", "DT_INTERNA", "DT_NASC", "CO_MU_INTE", 
+                "SURTO_SG", "ID_MN_INTE", "NM_UN_INTE", "RAIOX_RES",
+                "SUPORT_VEN", "AMOSTRA", "TP_AMOSTRA", "DT_COLETA",
+                "PCR_RESUL", "DT_PCR", "PCR_VSR", "PCR_PARA1", 
+                "PCR_PARA2", "PCR_PARA3", "PCR_PARA4", "PCR_ADENO",
+                "PCR_METAP", "PCR_BOCA", "PCR_RINO", "PCR_OUTRO",
+                "CLASSI_FIN", "CRITERIO", "DT_ENCERRA", "DT_DIGITA",
+                "PCR_SARS2", "DOR_ABD", "FADIGA", "PERD_OLFT", 
+                "PERD_PALA", "TOMO_RES", "RES_AN", "AN_SARS2", 
+                "AN_VSR", "AN_PARA1", "AN_PARA2", "AN_PARA3", 
+                "AN_ADENO", "AN_OUTRO", "POV_CT", "TEM_CPF", 
+                "ESTRANG", "FNT_IN_COV", "CO_DETEC","REINF"]
    
    return df.drop(columns=cols_drop, errors="ignore")
 

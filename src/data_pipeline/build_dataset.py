@@ -1,6 +1,8 @@
 import os
-from dotenv import load_dotenv
+
 import pandas as pd
+from dotenv import load_dotenv
+
 from src.data_pipeline.clean_dataset import clean_dataset
 
 # Carrega variáveis de ambiente do .env
